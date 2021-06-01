@@ -1,3 +1,10 @@
+*{
+  box-sizing: border-box;
+  margin:0px;
+  padding: 0px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .centered {
   position: fixed;
   top: 50%;
@@ -24,4 +31,15 @@
 
 .hide {
   display: none;
+}
+
+#start-game {
+  cursor:pointer;
+  background-color: blue;
+  padding: 40px;
+  color:white;
+  font-size: 3rem;
+  border:none;
+  border-radius: 20px;
+  box-shadow: black 0px 0px 10px 2px;
 }

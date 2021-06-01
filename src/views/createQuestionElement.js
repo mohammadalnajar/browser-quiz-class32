@@ -2,6 +2,9 @@
 
 import createDOMElement from '../utils/createDOMElement.js';
 
+export let correctAnswer = [];
+export let wrongAnswer = [];
+
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
   const title = createDOMElement('h1');
@@ -9,22 +12,29 @@ export const createQuestionElement = (question) => {
   container.appendChild(title);
   const answerContainer = createDOMElement('ol');
   let clickCounter = 0;
+  
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(answerKey, question.answers[answerKey]);
 
     answer.addEventListener('click', (e) => {
       console.log(e);
       clickCounter++;
-
+      
       if (
         e.target.dataset.answerItemKey == question.correct &&
         clickCounter == 1
       ) {
+        correctAnswer.push(question.text);
         e.target.classList.add('correct');
+        console.log(correctAnswer)
+       
       } else if (
         e.target.dataset.answerItemKey != question.correct &&
         clickCounter == 1
       ) {
+        wrongAnswer.push(`The Correct Answer for ${question.text} is ${question.correct}`)
+        console.log(wrongAnswer)
+        console.log()
         e.target.parentElement.childNodes.forEach((item) => {
           if (item.dataset.answerItemKey == question.correct) {
             item.classList.add('correct');
@@ -37,6 +47,9 @@ export const createQuestionElement = (question) => {
         title.style.color = 'red';
         title.style.width = '800px';
       }
+      
+
+     
     });
 
     answerContainer.appendChild(answer);

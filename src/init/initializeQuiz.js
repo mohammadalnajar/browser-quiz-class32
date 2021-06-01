@@ -12,24 +12,20 @@ import createNextQuestionButtonElement from '../views/createNextQuestionButtonEl
 import { quizData } from '../data.js';
 import { progressBar } from '../handlers/handleNextQuestion.js';
 
-const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
+export const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
+export const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
 
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
-
   setupQuizHTML();
-
   showCurrentQuestion();
 };
 
 const setupQuizHTML = () => {
-  const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
-  const questionContainer = createDOMElement('div', {
-    id: QUESTION_CONTAINER_ID,
-  });
+  const questionContainer = createDOMElement('div', { 
+  id: QUESTION_CONTAINER_ID, });
 
   quizContainer.appendChild(questionContainer);
-
   const nextQuestionButton = createNextQuestionButtonElement();
   quizContainer.appendChild(nextQuestionButton);
 
@@ -42,8 +38,8 @@ const startGame = () => {
   startButton.innerText = 'Start The Game';
   userInterfaceContainer.appendChild(startButton);
   startButton.addEventListener('click', () => {
-    startButton.classList.add('hide');
-    progressBar.classList.remove('hide');
+  startButton.classList.add('hide');
+  progressBar.classList.remove('hide');
 
     initializeQuiz();
   });
