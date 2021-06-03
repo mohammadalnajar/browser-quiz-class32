@@ -9,7 +9,8 @@ export function createScoreElement(quizData) {
   clearDOMElement(scoreContainer);
 
   const score = createDOMElement('h3', { id: 'user-score' });
-  score.innerText = `${quizData.correctAnswers.length} correct of ${quizData.questions.length}`;
+  score.style.width=`${(quizData.correctAnswers.length/quizData.questions.length)*100}%`
+  // scoreContainer.innerText = "You are owesome!";
 
   scoreContainer.appendChild(score);
 }
