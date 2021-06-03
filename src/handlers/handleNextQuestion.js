@@ -35,7 +35,7 @@ const handleNextQuestion = () => {
 
       // loop through the correct questions answered array to initialize a new div with h2 and h4
       quizData.correctAnswers.forEach((item, i) => {
-        const newQuestionContainer = createDOMElement('div');
+        const newQuestionContainer = createDOMElement('div',{className:"result_item"});
         const correctQuestion = createDOMElement('h2');
         const correctAnswer = createDOMElement('h4');
         correctQuestion.innerText = `${i + 1}- ${item.text}`;
