@@ -5,6 +5,7 @@ import {
   QUIZ_CONTAINER_ID,
   SCORE_CONTAINER_ID,
   USER_INTERFACE_ID,
+  RESOURCE_CONTAINER_ID,
 } from '../constants.js';
 import { showCurrentQuestion } from '../handlers/showCurrentQuestion.js';
 import createDOMElement from '../utils/createDOMElement.js';
@@ -27,7 +28,10 @@ const setupQuizHTML = () => {
   const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
   const questionContainer = createDOMElement('div', {
     id: QUESTION_CONTAINER_ID,
+
+   
   });
+  
 
   quizContainer.appendChild(questionContainer);
 
@@ -36,6 +40,15 @@ const setupQuizHTML = () => {
 
   userInterfaceContainer.appendChild(quizContainer);
   document.body.appendChild(scoreContainer);
+  const dataLinks = createDOMElement('div', {id: RESOURCE_CONTAINER_ID});
+  const links = createDOMElement('a', {id: 'link-address'});
+  dataLinks.appendChild(links);
+    quizContainer.appendChild(dataLinks);
+   
+    dataLinks.style.color = 'white';
+    links.innerText = `For more information ${quizData.questions[quizData.currentQuestionIndex].links[0].text}`;
+    links.href = quizData.questions[quizData.currentQuestionIndex].links[0].href;
+   
 };
 
 const startGame = () => {
@@ -47,7 +60,11 @@ const startGame = () => {
     startButton.classList.add('hide');
     progressBar.classList.remove('hide');
 
+    
     initializeQuiz();
+   
+    
+  
   });
 };
 
