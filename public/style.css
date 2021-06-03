@@ -8,6 +8,17 @@
 
 }
 
+a, a:visited {
+  text-underline-position: under;
+  
+  color: rgb(150, 146, 146);
+  font-family: FreeMono, monospace;
+}
+a:hover {
+  color: white;
+}
+
+
 body{
   background-image: url(/public/quiz-bg2.gif);
   background-repeat: no-repeat;
@@ -165,8 +176,21 @@ ol{
   font-size: 
 }
 
+#resource-link {
+  margin-top: 40px;
 
+}
 
+#link-address {
+
+}
+#user-score{
+  color:rgb(114, 255, 71);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 30px;
+}
 
 .centered {
   position: fixed;

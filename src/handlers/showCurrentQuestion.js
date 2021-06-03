@@ -14,6 +14,8 @@ export const showCurrentQuestion = () => {
 
   clearDOMElement(questionContainer);
   questionContainer.appendChild(questionDOM);
+
+  
 };
 
 export default showCurrentQuestion;
