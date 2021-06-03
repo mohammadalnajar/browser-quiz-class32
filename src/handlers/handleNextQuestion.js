@@ -11,7 +11,7 @@ import { createScoreElement } from '../views/createScoreElement.js';
 let progressCounter = 1;
 export const progressBar = document.createElement('div');
 progressBar.classList.add('hide');
-progressBar.className="progressBar";
+progressBar.classList.add('progressBar');
 document.body.appendChild(progressBar);
 progressBar.innerText = `Your Current Question is ${progressCounter} out of ${quizData.questions.length}`;
 
@@ -47,7 +47,6 @@ const handleNextQuestion = () => {
           if (item.correct == answerKey) {
             correctAnswer.innerText = `${item.correct}: ${item.answers[answerKey]}`;
             newQuestionContainer.appendChild(correctAnswer);
-          
           }
         }
         resultContainer.appendChild(newQuestionContainer);
@@ -63,8 +62,11 @@ const handleNextQuestion = () => {
     //`
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
     const links = getDOMElement('link-address');
-    links.innerText = `For more information ${quizData.questions[quizData.currentQuestionIndex].links[0].text}`;
-    links.href = quizData.questions[quizData.currentQuestionIndex].links[0].href;
+    links.innerText = `For more information ${
+      quizData.questions[quizData.currentQuestionIndex].links[0].text
+    }`;
+    links.href =
+      quizData.questions[quizData.currentQuestionIndex].links[0].href;
     showCurrentQuestion();
   }
 };
