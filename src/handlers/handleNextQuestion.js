@@ -5,7 +5,7 @@ import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import { questionContainer } from '../handlers/showCurrentQuestion.js';
 import getDOMElement from '../utils/getDOMElement.js';
-import { USER_INTERFACE_ID } from '../constants.js';
+import { RESOURCE_CONTAINER_ID, USER_INTERFACE_ID } from '../constants.js';
 import { createScoreElement } from '../views/createScoreElement.js';
 
 let progressCounter = 1;
@@ -47,6 +47,7 @@ const handleNextQuestion = () => {
           if (item.correct == answerKey) {
             correctAnswer.innerText = `${item.correct}: ${item.answers[answerKey]}`;
             newQuestionContainer.appendChild(correctAnswer);
+          
           }
         }
         resultContainer.appendChild(newQuestionContainer);
@@ -59,9 +60,11 @@ const handleNextQuestion = () => {
     progressCounter++;
     progressBar.innerText = '';
     progressBar.innerText = `Your Current Question is ${progressCounter} out of ${quizData.questions.length}`;
-
+    //`
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+    const links = getDOMElement('link-address');
+    links.innerText = `For more information ${quizData.questions[quizData.currentQuestionIndex].links[0].text}`;
+    links.href = quizData.questions[quizData.currentQuestionIndex].links[0].href;
     showCurrentQuestion();
   }
 };
