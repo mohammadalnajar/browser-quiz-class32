@@ -59,6 +59,25 @@ body{
   width: 40%;
 }
 
+#score-container{
+  float: right;
+  margin-top: -50px;
+  height: 3rem;
+  border: 5px solid green;
+  border-radius: 10px;
+  width: 33%;
+  right:20px;
+  color: rgb(224, 210, 8);
+}
+
+#score-container h3{
+  height: 100%;
+  width: 0%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+
 #quiz-container{
   background-color: black;
   width:90vw;
@@ -79,6 +98,9 @@ body{
   animation-name: zoomOut;
   animation-duration: 1s;
 }
+
+
+
 
 ol{
   list-style: none;
@@ -142,6 +164,7 @@ ol{
   font-weight: 400;
   margin-top: 30px;
 }
+
 .centered {
   position: fixed;
   top: 50%;

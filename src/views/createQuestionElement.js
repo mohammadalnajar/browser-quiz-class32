@@ -42,8 +42,9 @@ export const createQuestionElement = (question) => {
         title.style.width = '800px';
       }
 
-      createScoreElement(quizData);
+    
     });
+    createScoreElement(quizData);
     answerContainer.appendChild(answer);
   }
 
