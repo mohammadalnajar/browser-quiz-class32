@@ -14,3 +14,4 @@ export const QUESTION_CONTAINER_ID = 'question-container';
 export const SCORE_CONTAINER_ID = 'score-container';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const RESOURCE_CONTAINER_ID = 'resource-link';
+export const QUESTION_COUNTER_CONTAINER_ID = 'question-counter-container';
