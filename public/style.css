@@ -24,6 +24,11 @@ body {
   background-size: cover;
 }
 
+body.no-animation {
+  background-image: url(/public/quiz-bg4.gif);
+  background-repeat: repeat;
+}
+
 #stop_animation {
   position: fixed;
   width: 80px;
@@ -128,7 +133,11 @@ ol {
   width: 100%;
   margin: 10px auto;
   color: rgb(243, 245, 243);
+<<<<<<< HEAD
   font-size: 1.2rem;
+=======
+  font-size: 30px;
+>>>>>>> improve styling of not animating background image
   font-weight: 400;
   padding: 20px;
   border-radius: 10px;

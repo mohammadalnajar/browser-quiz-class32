@@ -73,7 +73,7 @@ const startGame = () => {
 
   stopAnimationButton.addEventListener('click', () => {
     console.log('stop animation clicked');
-    document.body.style.backgroundImage = "url('public/quiz-bg4.gif')";
+    document.body.classList.add('no-animation');
   });
 };
 
