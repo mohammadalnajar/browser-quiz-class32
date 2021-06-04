@@ -9,7 +9,7 @@ import createQuestionCounter from '../views/createQuestionCounter.js';
 import { handleResultButtonClick } from './handleResultButtonClick.js';
 
 const handleNextQuestion = () => {
-  if (quizData.currentQuestionIndex == quizData.questions.length - 9) {
+  if (quizData.currentQuestionIndex == quizData.questions.length - 2) {
     // check if we are on the question before the last question
 
     const resultBtn = createDOMElement('button', { id: 'result-btn' });
