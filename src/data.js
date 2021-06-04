@@ -65,7 +65,7 @@ export const quizData = {
         b: 'The <body> section',
         c: 'The <head> section',
       },
-      correct: 'b',
+      correct: 'a',
       selected: null,
       links: [
         {
