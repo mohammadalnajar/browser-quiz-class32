@@ -60,11 +60,20 @@ const startGame = () => {
   const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
   startButton.innerText = 'Start The Game';
   userInterfaceContainer.appendChild(startButton);
+
   startButton.addEventListener('click', () => {
     startButton.classList.add('hide');
-    // progressBar.classList.remove('hide');
-
     initializeQuiz();
+  });
+  const stopAnimationButton = createDOMElement('button', {
+    id: 'stop_animation',
+  });
+  stopAnimationButton.innerText = 'stop animation';
+  document.body.appendChild(stopAnimationButton);
+
+  stopAnimationButton.addEventListener('click', () => {
+    console.log('stop animation clicked');
+    document.body.style.backgroundImage = "url('public/quiz-bg4.gif')";
   });
 };
 
