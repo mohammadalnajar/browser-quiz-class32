@@ -31,10 +31,6 @@ export const quizData = {
           text: 'javascript.info',
           href: 'https://javascript.info/variables',
         },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
-        },
       ],
     },
     {
@@ -51,10 +47,6 @@ export const quizData = {
         {
           text: 'javascript.info',
           href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
         },
       ],
     },

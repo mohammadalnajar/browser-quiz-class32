@@ -7,7 +7,7 @@ import { questionContainer } from '../handlers/showCurrentQuestion.js';
 import getDOMElement from '../utils/getDOMElement.js';
 import createQuestionCounter from '../views/createQuestionCounter.js';
 import { handleResultButtonClick } from './handleResultButtonClick.js';
-
+import { LINK_ADDRESS } from '../constants.js';
 const handleNextQuestion = () => {
   if (quizData.currentQuestionIndex == quizData.questions.length - 2) {
     // check if we are on the question before the last question
@@ -25,8 +25,9 @@ const handleNextQuestion = () => {
     quizData.currentQuestionIndex++;
 
     createQuestionCounter(quizData);
+    // createLinksElement(quizData);
 
-    const links = getDOMElement('link-address');
+    const links = getDOMElement(LINK_ADDRESS);
     links.innerText = `For more information ${
       quizData.questions[quizData.currentQuestionIndex].links[0].text
     }`;

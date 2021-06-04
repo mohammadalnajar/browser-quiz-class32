@@ -38,11 +38,9 @@ export const createQuestionElement = (question) => {
         });
       } else {
         title.innerText = 'Click next Button';
+        title.style.textAlign = 'center';
         title.style.color = 'red';
-        title.style.width = '800px';
       }
-
-    
     });
     createScoreElement(quizData);
     answerContainer.appendChild(answer);
