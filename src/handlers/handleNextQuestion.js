@@ -5,12 +5,11 @@ import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import { questionContainer } from '../handlers/showCurrentQuestion.js';
 import getDOMElement from '../utils/getDOMElement.js';
-import { USER_INTERFACE_ID } from '../constants.js';
-import { createScoreElement } from '../views/createScoreElement.js';
 import createQuestionCounter from '../views/createQuestionCounter.js';
+import { handleResultButtonClick } from './handleResultButtonClick.js';
 
 const handleNextQuestion = () => {
-  if (quizData.currentQuestionIndex == quizData.questions.length - 2) {
+  if (quizData.currentQuestionIndex == quizData.questions.length - 9) {
     // check if we are on the question before the last question
 
     const resultBtn = createDOMElement('button', { id: 'result-btn' });
@@ -20,36 +19,7 @@ const handleNextQuestion = () => {
     questionContainer.parentElement.appendChild(resultBtn);
 
     // result btn function
-    resultBtn.addEventListener('click', () => {
-      questionContainer.parentElement.classList.add('hide');
-      const resultContainer = createDOMElement('div', {
-        className: 'result-container',
-      });
-      createScoreElement(quizData);
-
-      // loop through the correct questions answered array to initialize a new div with h2 and h4
-      quizData.correctAnswers.forEach((item, i) => {
-        const newQuestionContainer = createDOMElement('div', {
-          className: 'result_item',
-        });
-        const correctQuestion = createDOMElement('h2');
-        const correctAnswer = createDOMElement('h4');
-        correctQuestion.innerText = `${i + 1}- ${item.text}`;
-
-        newQuestionContainer.appendChild(correctQuestion);
-
-        //loop through the answers object to get only the correct answer
-        for (const answerKey in item.answers) {
-          if (item.correct == answerKey) {
-            correctAnswer.innerText = `${item.correct}: ${item.answers[answerKey]}`;
-            newQuestionContainer.appendChild(correctAnswer);
-          }
-        }
-        resultContainer.appendChild(newQuestionContainer);
-      });
-      const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
-      userInterfaceContainer.appendChild(resultContainer);
-    });
+    resultBtn.addEventListener('click', handleResultButtonClick);
   }
   if (quizData.currentQuestionIndex < quizData.questions.length - 1) {
     quizData.currentQuestionIndex++;
