@@ -6,10 +6,10 @@ import { createScoreElement } from './createScoreElement.js';
 
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
+  const answerContainer = createDOMElement('ol');
   const title = createDOMElement('h1');
   title.innerText = question.text;
   container.appendChild(title);
-  const answerContainer = createDOMElement('ol');
   let clickCounter = 0;
 
   for (const answerKey in question.answers) {
@@ -54,7 +54,6 @@ export const createAnswerElement = (answerKey, answerText) => {
   const answerElement = createDOMElement('li', { className: 'btn' });
   answerElement.innerText = answerText;
   answerElement.dataset.answerItemKey = answerKey;
-  answerElement.classList.add('answersStyle');
   return answerElement;
 };
 

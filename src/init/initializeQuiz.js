@@ -8,7 +8,8 @@ import {
   RESOURCE_CONTAINER_ID,
   QUESTION_COUNTER_CONTAINER_ID,
   STOP_ANIMATION_ID,
-  LINK_ADDRESS,
+  LINK_ADDRESS_ID,
+  START_GAME_ID,
 } from '../constants.js';
 import { showCurrentQuestion } from '../handlers/showCurrentQuestion.js';
 import createDOMElement from '../utils/createDOMElement.js';
@@ -20,7 +21,7 @@ import stopAnimation from '../handlers/stopAnimation.js';
 import createLinksElement from '../views/createLinksElement.js';
 
 const initializeQuiz = () => {
-  quizData.currentQuestionIndex = 0;
+  // quizData.currentQuestionIndex = 0;
 
   setupQuizHTML();
 
@@ -28,7 +29,7 @@ const initializeQuiz = () => {
 };
 
 const setupQuizHTML = () => {
-  // creating variables
+  // initializing variables to create HTML elements
   const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
   const scoreContainer = createDOMElement('div', { id: SCORE_CONTAINER_ID });
   const questionCounterContainer = createDOMElement('div', {
@@ -38,7 +39,7 @@ const setupQuizHTML = () => {
   const questionContainer = createDOMElement('div', {
     id: QUESTION_CONTAINER_ID,
   });
-  const links = createDOMElement('a', { id: LINK_ADDRESS });
+  const links = createDOMElement('a', { id: LINK_ADDRESS_ID });
   const dataLinks = createDOMElement('div', { id: RESOURCE_CONTAINER_ID });
 
   const nextQuestionButton = createNextQuestionButtonElement();
@@ -58,7 +59,7 @@ const setupQuizHTML = () => {
 
 const startGame = () => {
   const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
-  const startButton = createDOMElement('button', { id: 'start-game' });
+  const startButton = createDOMElement('button', { id: START_GAME_ID });
   const stopAnimationButton = createDOMElement('button', {
     id: STOP_ANIMATION_ID,
   });
