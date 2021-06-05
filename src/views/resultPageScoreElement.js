@@ -4,16 +4,18 @@ import { QUIZ_CONTAINER_ID } from '../constants.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import getDOMElement from '../utils/getDOMElement.js';
 
-export const resultPageScoreElement = createDOMElement('div', {
-  className: 'result-page-score-element',
-  id: 'resultPageScoreElement',
-});
-export const correctQuestionContainer = createDOMElement('ol', {
-  className: 'correct-question-container',
-  id: 'correctQuestionContainer',
-});
 export const resultPageScoreElementFunc = (quizData) => {
   const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
+  const resultPageScoreElement = createDOMElement('div', {
+    className: 'result-page-score-element',
+    id: 'resultPageScoreElement',
+  });
+  const correctQuestionContainer = createDOMElement('ol', {
+    className: 'correct-question-container',
+    id: 'correctQuestionContainer',
+  });
+
+  resultPageScoreElement.innerText = `You have answered ${quizData.correctAnswers.length} out of ${quizData.questions.length} Correctly`;
 
   quizData.correctAnswers.forEach((item, i) => {
     const correctQuestionList = createDOMElement('li', {
