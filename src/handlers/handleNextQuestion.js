@@ -7,7 +7,7 @@ import getDOMElement from '../utils/getDOMElement.js';
 import createQuestionCounter from '../views/createQuestionCounter.js';
 import { handleResultButtonClick } from './handleResultButtonClick.js';
 import {QUESTION_CONTAINER_ID,
-  RESULT_BUTTON_ID,
+  RESULT_BUTTON_ID, NEXT_QUESTION_BUTTON_ID,
 } from '../constants.js';
 import createLinkElement from '../views/createLinkElement.js';
 
@@ -17,7 +17,7 @@ const handleNextQuestion = () => {
     // checking the second last question array to insert the result button on quizContainer
     const resultBtn = createDOMElement('button', { id: RESULT_BUTTON_ID });
     resultBtn.innerText = 'SHOW  RESULT';
-    const nextBtn = getDOMElement('next-question-button');
+    const nextBtn = getDOMElement(NEXT_QUESTION_BUTTON_ID);
     nextBtn.classList.add('hide');
     questionContainer.parentElement.appendChild(resultBtn);
 
