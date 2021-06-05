@@ -21,7 +21,7 @@ import stopAnimation from '../handlers/stopAnimation.js';
 import createLinkElement from '../views/createLinkElement.js';
 
 const initializeQuiz = () => {
-  // quizData.currentQuestionIndex = 0;
+  quizData.currentQuestionIndex = 0;
 
   setupQuizHTML();
 
@@ -40,7 +40,9 @@ const setupQuizHTML = () => {
     id: QUESTION_CONTAINER_ID,
   });
   const resourceLink = createDOMElement('a', { id: LINK_ADDRESS_ID });
-  const resourceLinkContainer = createDOMElement('div', { id: RESOURCE_CONTAINER_ID });
+  const resourceLinkContainer = createDOMElement('div', {
+    id: RESOURCE_CONTAINER_ID,
+  });
 
   const nextQuestionButton = createNextQuestionButtonElement();
 

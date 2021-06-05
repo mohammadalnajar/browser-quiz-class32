@@ -39,7 +39,6 @@ export const createQuestionElement = (question) => {
       } else {
         title.innerText = 'Click next Button';
         title.classList.add('titleStyle');
-        
       }
     });
     createScoreElement(quizData);

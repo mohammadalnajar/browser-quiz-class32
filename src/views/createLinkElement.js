@@ -8,7 +8,8 @@ const createLinkElement = (quizData) => {
   resourceLink.innerText = `For more information ${
     quizData.questions[quizData.currentQuestionIndex].links[0].text
   }`;
-  resourceLink.href = quizData.questions[quizData.currentQuestionIndex].links[0].href;
+  resourceLink.href =
+    quizData.questions[quizData.currentQuestionIndex].links[0].href;
   resourceLinkContainer.appendChild(resourceLink);
 };
 

@@ -9,7 +9,7 @@ export const handleResultButtonClick = () => {
   const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
   clearDOMElement(quizContainer);
   quizContainer.classList.add('result-container');
-  quizContainer.classList.add("resultHeight");
+  quizContainer.classList.add('resultHeight');
 
   createScoreElement(quizData);
   createResultContainer(quizData);

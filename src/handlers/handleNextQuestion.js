@@ -6,8 +6,10 @@ import createDOMElement from '../utils/createDOMElement.js';
 import getDOMElement from '../utils/getDOMElement.js';
 import createQuestionCounter from '../views/createQuestionCounter.js';
 import { handleResultButtonClick } from './handleResultButtonClick.js';
-import {QUESTION_CONTAINER_ID,
-  RESULT_BUTTON_ID, NEXT_QUESTION_BUTTON_ID,
+import {
+  QUESTION_CONTAINER_ID,
+  RESULT_BUTTON_ID,
+  NEXT_QUESTION_BUTTON_ID,
 } from '../constants.js';
 import createLinkElement from '../views/createLinkElement.js';
 

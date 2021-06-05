@@ -8,8 +8,10 @@ export function createScoreElement(quizData) {
   const scoreContainer = getDOMElement(SCORE_CONTAINER_ID);
   clearDOMElement(scoreContainer);
 
-  const score = createDOMElement('h3', {id: USER_SCORE_ID});
-  score.style.width=`${(quizData.correctAnswers.length/quizData.questions.length)*100}%`
+  const score = createDOMElement('h3', { id: USER_SCORE_ID });
+  score.style.width = `${
+    (quizData.correctAnswers.length / quizData.questions.length) * 100
+  }%`;
 
   scoreContainer.appendChild(score);
 }
