@@ -4,7 +4,7 @@ import { QUIZ_CONTAINER_ID } from '../constants.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import getDOMElement from '../utils/getDOMElement.js';
 
-export const resultPageScoreElementFunc = (quizData) => {
+export const createResultContainer = (quizData) => {
   const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
   const resultPageScoreElement = createDOMElement('div', {
     className: 'result-page-score-element',
@@ -42,4 +42,4 @@ export const resultPageScoreElementFunc = (quizData) => {
     quizContainer.appendChild(resultPageScoreElement);
   });
 };
-export default resultPageScoreElementFunc;
+export default createResultContainer;

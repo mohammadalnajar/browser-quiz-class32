@@ -227,7 +227,10 @@ ol {
 .resultHeight {
   height: 550px;
 }
-
+.titleStyle {
+  color: red;
+  text-align: center;
+}
 /* for tab version  */
 @media only screen and (max-width: 1040px) {
   #start-game {

@@ -18,7 +18,7 @@ import createNextQuestionButtonElement from '../views/createNextQuestionButtonEl
 import { quizData } from '../data.js';
 import { createQuestionCounter } from '../views/createQuestionCounter.js';
 import stopAnimation from '../handlers/stopAnimation.js';
-import createLinksElement from '../views/createLinksElement.js';
+import createLinkElement from '../views/createLinkElement.js';
 
 const initializeQuiz = () => {
   // quizData.currentQuestionIndex = 0;
@@ -39,8 +39,8 @@ const setupQuizHTML = () => {
   const questionContainer = createDOMElement('div', {
     id: QUESTION_CONTAINER_ID,
   });
-  const links = createDOMElement('a', { id: LINK_ADDRESS_ID });
-  const dataLinks = createDOMElement('div', { id: RESOURCE_CONTAINER_ID });
+  const resourceLink = createDOMElement('a', { id: LINK_ADDRESS_ID });
+  const resourceLinkContainer = createDOMElement('div', { id: RESOURCE_CONTAINER_ID });
 
   const nextQuestionButton = createNextQuestionButtonElement();
 
@@ -50,10 +50,10 @@ const setupQuizHTML = () => {
   userInterfaceContainer.appendChild(quizContainer);
   quizContainer.appendChild(questionContainer);
   quizContainer.appendChild(nextQuestionButton);
-  quizContainer.appendChild(dataLinks);
-  dataLinks.appendChild(links);
+  quizContainer.appendChild(resourceLinkContainer);
+  resourceLinkContainer.appendChild(resourceLink);
 
-  createLinksElement(quizData);
+  createLinkElement(quizData);
   createQuestionCounter(quizData);
 };
 

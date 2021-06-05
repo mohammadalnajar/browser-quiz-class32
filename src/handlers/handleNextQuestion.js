@@ -6,11 +6,11 @@ import createDOMElement from '../utils/createDOMElement.js';
 import getDOMElement from '../utils/getDOMElement.js';
 import createQuestionCounter from '../views/createQuestionCounter.js';
 import { handleResultButtonClick } from './handleResultButtonClick.js';
-import {
-  LINK_ADDRESS_ID,
-  QUESTION_CONTAINER_ID,
+import {QUESTION_CONTAINER_ID,
   RESULT_BUTTON_ID,
 } from '../constants.js';
+import createLinkElement from '../views/createLinkElement.js';
+
 const handleNextQuestion = () => {
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   if (quizData.currentQuestionIndex == quizData.questions.length - 2) {
@@ -28,14 +28,8 @@ const handleNextQuestion = () => {
     quizData.currentQuestionIndex++;
 
     createQuestionCounter(quizData);
-    // createLinksElement(quizData);
+    createLinkElement(quizData);
 
-    const links = getDOMElement(LINK_ADDRESS_ID);
-    links.innerText = `For more information ${
-      quizData.questions[quizData.currentQuestionIndex].links[0].text
-    }`;
-    links.href =
-      quizData.questions[quizData.currentQuestionIndex].links[0].href;
     showCurrentQuestion();
   }
 };
