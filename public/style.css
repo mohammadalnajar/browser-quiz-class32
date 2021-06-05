@@ -52,11 +52,8 @@ body.no-animation {
 }
 
 #start-game {
-  position: absolute;
-  top:50%;
-  left:30%;
-  font-size: 40px;
-  padding: 20px 50px;
+  font-size: 3rem;
+  padding: 1.2rem 3.5rem;
   background-color: rgb(240, 205, 49);
   color: rgb(18, 15, 31);
   font-weight: 600;
@@ -113,7 +110,6 @@ body.no-animation {
   border: 5px solid green;
   border-radius: 15px;
   margin-top: 50px;
-  z-index: 1;
 }
 
 #question-container h1 {
@@ -180,11 +176,13 @@ ol {
 
 .result_item {
   border: 1px solid green;
-  height: 100%;
   padding: 10px;
   border-radius: 8px;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 70%;
 }
+
+
 
 #resource-link {
   margin-top: 40px;
@@ -196,21 +194,13 @@ ol {
   text-transform: uppercase;
   font-weight: 400;
 }
-/* 
+
 .centered {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-} */
-
-.centered {
-  position: absolute;
-  text-align: center;
-  bottom: 20%;
-  top: 15%;
-  left: 15%;
 }
 
 .scrollable {
@@ -242,16 +232,15 @@ ol {
   }
 }
 
+.resultHeight{
+  height:550px;
+}
+
 /* for tab version  */
 @media only screen and (max-width: 1040px) {
   body {
-    background-image: url(/public/quiz-bg4.gif);
-    background-repeat: repeat;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
   }
 
   #start-game {
@@ -394,6 +383,7 @@ ol {
     }
   }
 }
+
 
 /* mobile version  */
 @media only screen and (max-width: 700px) {

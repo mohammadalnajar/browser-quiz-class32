@@ -67,7 +67,6 @@ const startGame = () => {
 
   startButton.addEventListener('click', () => {
     startButton.classList.add('hide');
-    userInterfaceContainer.classList.add("centered");
     initializeQuiz();
   });
   stopAnimationButton.innerText = 'Stop Animation';
