@@ -18,7 +18,12 @@ a:hover {
   color: white;
 }
 
+html{
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background-image: url(/public/quiz-bg2.gif);
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +35,9 @@ body.no-animation {
 }
 
 #stop_animation {
-  position: fixed;
+  position:fixed;
+  bottom: 5%;
+  right:5%;
   width: 80px;
   height: 80px;
   font-size: 10px;
@@ -38,16 +45,16 @@ body.no-animation {
   line-height: 18px;
   background-image: radial-gradient(#069c51, #fff);
   clip-path: circle(50% at 50% 50%);
-  margin-top: 10px;
-  margin-left: 10px;
   text-align: center;
   cursor: pointer;
   text-shadow: 1px 5px 10px black;
   font-family: 'Battlestar', sans-serif;
-  z-index: 1000;
 }
 
 #start-game {
+  position: absolute;
+  top:50%;
+  left:30%;
   font-size: 40px;
   padding: 20px 50px;
   background-color: rgb(240, 205, 49);
@@ -106,7 +113,6 @@ body.no-animation {
   border: 5px solid green;
   border-radius: 15px;
   margin-top: 50px;
-  height: 600px;
   z-index: 1;
 }
 
@@ -124,7 +130,7 @@ ol {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .btn {
@@ -166,7 +172,6 @@ ol {
 }
 
 .result-container {
-  display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -191,13 +196,21 @@ ol {
   text-transform: uppercase;
   font-weight: 400;
 }
-
+/* 
 .centered {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+} */
+
+.centered {
+  position: absolute;
+  text-align: center;
+  bottom: 20%;
+  top: 15%;
+  left: 15%;
 }
 
 .scrollable {
@@ -259,7 +272,7 @@ ol {
   }
 
   #score-container {
-    position: absolute;
+    /* position: absolute; */
     margin: none;
     margin-top: 30px;
     width: 80%;
