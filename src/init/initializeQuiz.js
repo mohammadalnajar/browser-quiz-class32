@@ -20,9 +20,10 @@ import { createQuestionCounter } from '../views/createQuestionCounter.js';
 import stopAnimation from '../handlers/stopAnimation.js';
 import createLinkElement from '../views/createLinkElement.js';
 
-export const initializeQuiz = () => {
+const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
-
+  quizData.correctAnswers = [];
+  quizData.wrongAnswers = [];
   setupQuizHTML();
 
   showCurrentQuestion();
@@ -59,7 +60,7 @@ const setupQuizHTML = () => {
   createQuestionCounter(quizData);
 };
 
-const startGame = () => {
+export const startGame = () => {
   const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
   const startButton = createDOMElement('button', { id: START_GAME_ID });
   const stopAnimationButton = createDOMElement('button', {
