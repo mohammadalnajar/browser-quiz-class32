@@ -8,7 +8,7 @@ export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
   const answerContainer = createDOMElement('ol');
   const title = createDOMElement('h1');
-  title.innerText = question.text;
+  title.innerText = `Q${quizData.currentQuestionIndex + 1}: ${question.text}`;
   container.appendChild(title);
   let clickCounter = 0;
 
