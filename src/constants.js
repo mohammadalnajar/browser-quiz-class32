@@ -18,5 +18,6 @@ export const QUESTION_COUNTER_CONTAINER_ID = 'question-counter-container';
 export const STOP_ANIMATION_ID = 'stop_animation';
 export const LINK_ADDRESS_ID = 'link-address';
 export const START_GAME_ID = 'start-game';
-export const RESULT_BUTTON_ID = 'result-btn';
+export const RESTART_BUTTON_ID = 'restart-btn';
 export const USER_SCORE_ID = 'user-score';
+

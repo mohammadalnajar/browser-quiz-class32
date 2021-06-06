@@ -13,4 +13,4 @@ export const handleResultButtonClick = () => {
 
   createScoreElement(quizData);
   createResultContainer(quizData);
-};
+}; 

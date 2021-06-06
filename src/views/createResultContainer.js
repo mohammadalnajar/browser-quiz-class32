@@ -1,11 +1,19 @@
 'use strict';
 
-import { QUIZ_CONTAINER_ID } from '../constants.js';
+import { QUIZ_CONTAINER_ID, RESTART_BUTTON_ID } from '../constants.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import getDOMElement from '../utils/getDOMElement.js';
+import handleRestartGame from '../handlers/handleRestartGame.js';
 
 export const createResultContainer = (quizData) => {
   const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
+  const restartBtn = createDOMElement('btn', {id: RESTART_BUTTON_ID, className: 'btn'});
+  restartBtn.innerText = 'restart the game';
+  restartBtn.addEventListener('click', handleRestartGame);
+  
+  
+  
+
   const resultPageScoreElement = createDOMElement('div', {
     className: 'result-page-score-element',
     id: 'resultPageScoreElement',
@@ -27,8 +35,9 @@ export const createResultContainer = (quizData) => {
     correctQuestion.innerText = `${i + 1}- ${item.text}`;
 
     correctQuestionContainer.appendChild(correctQuestionList);
-
+    correctQuestionContainer.appendChild(restartBtn);
     correctQuestionList.appendChild(correctQuestion);
+    
 
     //loop through the answers object to get only the correct answer
     for (const answerKey in item.answers) {
