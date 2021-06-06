@@ -24,12 +24,14 @@ export const createQuestionElement = (question) => {
       ) {
         e.target.classList.add('correct');
         quizData.correctAnswers.push(question);
+        question.selected = e.target.dataset.answerItemKey;
         createScoreElement(quizData);
       } else if (
         e.target.dataset.answerItemKey != question.correct &&
         clickCounter == 1
       ) {
         quizData.wrongAnswers.push(question);
+        question.selected = e.target.dataset.answerItemKey;
         e.target.parentElement.childNodes.forEach((item) => {
           if (item.dataset.answerItemKey == question.correct) {
             item.classList.add('correct');
