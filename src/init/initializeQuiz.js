@@ -20,7 +20,7 @@ import { createQuestionCounter } from '../views/createQuestionCounter.js';
 import stopAnimation from '../handlers/stopAnimation.js';
 import createLinkElement from '../views/createLinkElement.js';
 
-const initializeQuiz = () => {
+export const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
 
   setupQuizHTML();
