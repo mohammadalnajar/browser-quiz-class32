@@ -24,6 +24,7 @@ const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
   quizData.correctAnswers = [];
   quizData.wrongAnswers = [];
+  quizData.questions.sort(() => Math.random() - 0.5);
   setupQuizHTML();
 
   showCurrentQuestion();
