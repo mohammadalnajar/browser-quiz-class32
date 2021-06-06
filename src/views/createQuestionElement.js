@@ -24,6 +24,7 @@ export const createQuestionElement = (question) => {
       ) {
         e.target.classList.add('correct');
         quizData.correctAnswers.push(question);
+        createScoreElement(quizData);
       } else if (
         e.target.dataset.answerItemKey != question.correct &&
         clickCounter == 1
@@ -41,7 +42,7 @@ export const createQuestionElement = (question) => {
         title.classList.add('titleStyle');
       }
     });
-    createScoreElement(quizData);
+
     answerContainer.appendChild(answer);
   }
 
