@@ -3,8 +3,11 @@
 import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import { createScoreElement } from './createScoreElement.js';
-
+import makeRandom from '../handlers/handleRandomMaker.js';
 export const createQuestionElement = (question) => {
+  // making the answers random:
+  question.answers = makeRandom(question.answers);
+
   const container = createDOMElement('div');
   const answerContainer = createDOMElement('ol');
   const title = createDOMElement('h1');
