@@ -19,12 +19,12 @@ import { quizData } from '../data.js';
 import { createQuestionCounter } from '../views/createQuestionCounter.js';
 import stopAnimation from '../handlers/stopAnimation.js';
 import createLinkElement from '../views/createLinkElement.js';
-
+import makeRandom from '../handlers/handleRandomMaker.js';
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
   quizData.correctAnswers = [];
   quizData.wrongAnswers = [];
-  quizData.questions.sort(() => Math.random() - 0.5);
+  makeRandom(quizData.questions);
   setupQuizHTML();
 
   showCurrentQuestion();
