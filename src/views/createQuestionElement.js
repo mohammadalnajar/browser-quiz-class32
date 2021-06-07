@@ -17,7 +17,7 @@ export const createQuestionElement = (question) => {
 
     answer.addEventListener('click', (e) => {
       clickCounter++;
-      console.log('hello');
+
       if (
         e.target.dataset.answerItemKey == question.correct &&
         clickCounter == 1
