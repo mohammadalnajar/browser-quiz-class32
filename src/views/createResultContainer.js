@@ -1,18 +1,23 @@
 'use strict';
 
-import { QUIZ_CONTAINER_ID, RESTART_BUTTON_ID } from '../constants.js';
+import {
+  QUIZ_CONTAINER_ID,
+  RESTART_BUTTON_ID,
+  TIMER_CONTAINER_ID,
+} from '../constants.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import getDOMElement from '../utils/getDOMElement.js';
 import handleRestartGame from '../handlers/handleRestartGame.js';
 
 export const createResultContainer = (quizData) => {
   const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
-  const restartBtn = createDOMElement('btn', {id: RESTART_BUTTON_ID, className: 'btn'});
+  const restartBtn = createDOMElement('btn', {
+    id: RESTART_BUTTON_ID,
+    className: 'btn',
+  });
+
   restartBtn.innerText = 'restart the game';
   restartBtn.addEventListener('click', handleRestartGame);
-  
-  
-  
 
   const resultPageScoreElement = createDOMElement('div', {
     className: 'result-page-score-element',
@@ -22,6 +27,8 @@ export const createResultContainer = (quizData) => {
     className: 'correct-question-container',
     id: 'correctQuestionContainer',
   });
+  const timer = createDOMElement('div', { id: TIMER_CONTAINER_ID });
+  timer.innerText = quizData.timer;
 
   resultPageScoreElement.innerText = `You have answered ${quizData.correctAnswers.length} out of ${quizData.questions.length} Correctly`;
 
@@ -35,9 +42,9 @@ export const createResultContainer = (quizData) => {
     correctQuestion.innerText = `${i + 1}- ${item.text}`;
 
     correctQuestionContainer.appendChild(correctQuestionList);
-    correctQuestionContainer.appendChild(restartBtn);
+
     correctQuestionList.appendChild(correctQuestion);
-    
+    quizContainer.appendChild(timer);
 
     //loop through the answers object to get only the correct answer
     for (const answerKey in item.answers) {
@@ -48,6 +55,7 @@ export const createResultContainer = (quizData) => {
     }
 
     resultPageScoreElement.appendChild(correctQuestionContainer);
+    resultPageScoreElement.appendChild(restartBtn);
     quizContainer.appendChild(resultPageScoreElement);
   });
 };

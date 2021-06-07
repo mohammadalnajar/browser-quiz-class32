@@ -8,8 +8,10 @@ import { handleResultButtonClick } from './handleResultButtonClick.js';
 import {
   QUESTION_CONTAINER_ID,
   NEXT_QUESTION_BUTTON_ID,
+  RESULT_BUTTON_ID,
 } from '../constants.js';
 import createLinkElement from '../views/createLinkElement.js';
+import createDOMElement from '../utils/createDOMElement.js';
 
 const handleNextQuestion = () => {
   if (quizData.questions[quizData.currentQuestionIndex].selected != null) {
@@ -18,12 +20,15 @@ const handleNextQuestion = () => {
       // checking the second last question array to insert the result button on quizContainer
 
       const nextBtn = getDOMElement(NEXT_QUESTION_BUTTON_ID);
-      nextBtn.innerText = 'show result';
-
-      questionContainer.parentElement.appendChild(nextBtn);
+      nextBtn.remove();
+      const resultBtn = createDOMElement('button', {
+        id: RESULT_BUTTON_ID,
+      });
+      resultBtn.innerText = 'Show Result';
+      questionContainer.parentElement.appendChild(resultBtn);
 
       // result btn function
-      nextBtn.addEventListener('click', handleResultButtonClick);
+      resultBtn.addEventListener('click', handleResultButtonClick);
     }
     if (quizData.currentQuestionIndex < quizData.questions.length - 1) {
       quizData.currentQuestionIndex++;
