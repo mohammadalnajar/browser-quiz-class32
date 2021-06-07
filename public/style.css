@@ -346,11 +346,18 @@ ol {
     }
   }
 }
-
-div#user-interface {
+body {
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+div#user-interface {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
   text-align: center;
+  margin: 120px 0px;
 }
 
 .resultHeight {
@@ -363,7 +370,9 @@ div#user-interface {
 #question-counter-container {
   position: absolute;
   top: -10px;
+  left: 20px;
 }
 #quiz-container {
-  margin: 100px 0px;
+  margin-top: 200px;
+  margin-bottom: 20px;
 }
