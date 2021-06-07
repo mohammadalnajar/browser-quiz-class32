@@ -7,13 +7,6 @@ import { USER_INTERFACE_ID } from '../constants.js';
 
 const handleRestartGame = () => {
   clearDOMElement(document.body);
-
-  // const userInterFace = getDOMElement(USER_INTERFACE_ID);
-  // const lifeBar = getDOMElement(SCORE_CONTAINER_ID);
-
-  // clearDOMElement(lifeBar);
-
-  // clearDOMElement(userInterFace);
   const userInterFace = createDOMElement('div', {
     id: USER_INTERFACE_ID,
     className: 'centered',
