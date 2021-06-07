@@ -10,6 +10,7 @@ import {
   STOP_ANIMATION_ID,
   LINK_ADDRESS_ID,
   START_GAME_ID,
+  TIMER_CONTAINER_ID,
 } from '../constants.js';
 import { showCurrentQuestion } from '../handlers/showCurrentQuestion.js';
 import createDOMElement from '../utils/createDOMElement.js';
@@ -20,13 +21,14 @@ import { createQuestionCounter } from '../views/createQuestionCounter.js';
 import stopAnimation from '../handlers/stopAnimation.js';
 import createLinkElement from '../views/createLinkElement.js';
 import makeRandom from '../handlers/handleRandomMaker.js';
+import startTimer from '../handlers/startTimer.js';
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
   quizData.correctAnswers = [];
   quizData.wrongAnswers = [];
   makeRandom(quizData.questions);
   setupQuizHTML();
-
+  startTimer(quizData);
   showCurrentQuestion();
 };
 
@@ -45,13 +47,14 @@ const setupQuizHTML = () => {
   const resourceLinkContainer = createDOMElement('div', {
     id: RESOURCE_CONTAINER_ID,
   });
-
+  const timer = createDOMElement('div', { id: TIMER_CONTAINER_ID });
   const nextQuestionButton = createNextQuestionButtonElement();
 
   // appending elements
   document.body.appendChild(questionCounterContainer);
   document.body.appendChild(scoreContainer);
   userInterfaceContainer.appendChild(quizContainer);
+  quizContainer.appendChild(timer);
   quizContainer.appendChild(questionContainer);
   quizContainer.appendChild(nextQuestionButton);
   quizContainer.appendChild(resourceLinkContainer);
@@ -71,6 +74,7 @@ export const startGame = () => {
 
   startButton.addEventListener('click', () => {
     startButton.classList.add('hide');
+
     initializeQuiz();
   });
   stopAnimationButton.innerText = 'Stop Animation';
