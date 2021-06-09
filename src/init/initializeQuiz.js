@@ -22,12 +22,14 @@ import stopAnimation from '../handlers/stopAnimation.js';
 import createLinkElement from '../views/createLinkElement.js';
 import makeRandom from '../handlers/handleRandomMaker.js';
 import startTimer from '../handlers/startTimer.js';
+
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
   quizData.correctAnswers = [];
   quizData.wrongAnswers = [];
   makeRandom(quizData.questions);
   setupQuizHTML();
+  s;
   startTimer(quizData);
   showCurrentQuestion();
 };

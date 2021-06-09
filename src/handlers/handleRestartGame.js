@@ -9,7 +9,6 @@ const handleRestartGame = () => {
   clearDOMElement(document.body);
   const userInterFace = createDOMElement('div', {
     id: USER_INTERFACE_ID,
-    className: 'centered',
   });
   document.body.appendChild(userInterFace);
 

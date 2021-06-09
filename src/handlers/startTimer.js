@@ -8,7 +8,7 @@ const startTimer = (quizData) => {
   let counterMin = 0;
   let counter = 0;
   const timerDiv = getDOMElement(TIMER_CONTAINER_ID);
-  let interval = setInterval(() => {
+  setInterval(() => {
     counterSec++;
     if (counterSec == 60) {
       counterSec = 0;
